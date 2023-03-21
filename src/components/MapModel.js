@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import getImageURL from "../utils/getimageurl";
 import Button from "./Button";
 import ThreeDContainer from './ThreeDContainer';
