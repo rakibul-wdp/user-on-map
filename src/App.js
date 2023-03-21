@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
+import MapContainer from "./components/MapContainer";
+import MapModel from './components/MapModel';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <header className="App-header">
+          <h3>MapCube</h3>
+        </header>
+        <Routes>
+          <Route path="/" element={<MapContainer />} />
+          <Route path="/3dContainer/:lat/:lng/:zoom" element={<MapModel />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
